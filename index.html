@@ -155,19 +155,121 @@
     <!-- Portfolio -->
     <section id="portfolio" class="portfolio">
       <div class="container">
+        <div class="btn-group" id"periodo" data-toggle="buttons">
+          <h5 id="periodo">Periodo:</h5>
+          <label class="btn btn-secondary active" onCLick="changePeriodo(30)">
+            <input type="radio" name="options" id="option2" autocomplete="on" >30 días
+          </label>
+          <label class="btn btn-secondary" onCLick="changePeriodo(60)">
+            <input type="radio" name="options" id="option3" autocomplete="off">60 días
+          </label>
+        </div>
         <div class="row">
-          <div class="col-lg-10 mx-auto text-center">
-            <h2>... App bajo construcción ...</h2>
-            <hr class="small">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="img/portfolio-3.jpg">
-                  </a>
+          <div class="col-lg mx-auto text-center">
+            <!-- /////////////// /// AQUI COMIENZA LA app ////////////////// -->
+            <button type="button" class="btn btn-success" onclick="añadirElectrodomestico()">+ Añadir electrodoméstico</button>
+
+
+
+            <div class="container" id="Labels">
+              <div class="row">
+                <div class="col-3">
+                  <h5 >Tipo de electrodoméstico: </h5>
+                </div>
+                <div class="col-2">
+                  <h5 >Marca:</h5>
+                </div>
+                <div class="col-2">
+                  <h5 >Modelo:</h5>
+                </div>
+                <div class="col-2">
+                  <h5 >Potencia (Watts):</h5>
+                </div>
+                <div class="col-2">
+                  <h5 >Hrs aprox utilizadas por día:</h5>
                 </div>
               </div>
             </div>
+
+            <form role="form" onSubmit="return false;">
+              <div id="wrapper">
+
+              </div>
+              <button type="success" class="btn btn-outline-success" id="Finalizar" onclick="generarFactura()">GENERAR FACTURA</button>
+            </form>
+
+            <div id="Factura">
+              <h1>FACTURA</h1>
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Concepto</th>
+                    <th scope="col">kWh</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Subtotal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Básico</th>
+                    <td id="kwhBasico"></td>
+                    <td id="precioBasico">$0.793</td>
+                    <td id="subtotalBasico"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Intermedio</th>
+                    <td id="kwhIntermedio"></td>
+                    <td id="precioIntermedio">$0.956</td>
+                    <td id="subtotalIntermedio"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Excedente</th>
+                    <td id="kwhExcedente"></td>
+                    <td id="precioExcedente">$2.08</td>
+                    <td id="subtotalExcedente"></td>
+                  </tr>
+                  <tr class="thead-light">
+                    <th scope="row">Suma</th>
+                    <td id="kwhSuma"></td>
+                    <td></td>
+                    <td id="subtotalSuma"></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="table">
+                <thead class="thead-light">
+                  <tr>
+                    <h4 id="titleImporte">IMPORTE DE LA FACTURACIÓN</t4>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Energía</th>
+                    <td id="energia"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">IVA 16%</th>
+                    <td id="iva"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Fac. del periodo</th>
+                    <td id="fac"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">DAP</th>
+                    <td id="dap"></td>
+                  </tr>
+                  <tr class="thead-light">
+                    <th scope="row">TOTAL:</th>
+                    <td id="total"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+            <!-- ////////////////// AQUI TERMINA LA APP ////////////////// -->
           </div>
           <!-- /.col-lg-10 -->
         </div>

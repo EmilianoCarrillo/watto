@@ -285,3 +285,39 @@ footer {
 .fa-book, .fa-comments, .fa-list, .fa-search, .mail{
   color: #2ECC71;
 }
+
+
+
+
+
+
+
+
+
+#Labels{
+  background-color: #2ECC71;
+  color: white;
+  margin-top: 10px;
+}
+
+.elementoElectrodomestico{
+  margin-top: 10px;
+}
+
+#Finalizar {
+  margin: 20px;
+}
+
+#periodo{
+  margin-right: 20px;
+}
+
+#Factura{
+  padding: 10px;
+  margin-top: 20px;
+}
+
+#titleImporte{
+  background-color: black;
+  color: white;
+}
