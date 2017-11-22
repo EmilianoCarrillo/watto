@@ -120,11 +120,11 @@ function generarFactura(){
   consumoVariable = sumaConsumo;
   console.log(sumaConsumo);
   if (periodoGral == 30) {
-    if (consumoVariable>140) {
+    if (consumoVariable>140+75) {
       basico = 75;
       intermedio = 140;
       excedente = consumoVariable-basico-intermedio;
-    } else if(consumoVariable>75 && consumoVariable <= 140){
+    } else if(consumoVariable>75 && consumoVariable <= 75+140){
       basico = 75;
       intermedio = consumoVariable-basico;
       excedente = 0;
@@ -134,11 +134,11 @@ function generarFactura(){
       excedente = 0;
     }
   } else{
-    if (consumoVariable>280) {
+    if (consumoVariable>280+150) {
       basico = 150;
       intermedio = 280;
       excedente = consumoVariable-basico-intermedio;
-    } else if(consumoVariable>150 && consumoVariable <= 280){
+    } else if(consumoVariable>150 && consumoVariable <= 280+150){
       basico = 150;
       intermedio = consumoVariable-basico;
       excedente = 0;
